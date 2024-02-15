@@ -1,0 +1,57 @@
+﻿@page "/fetchdata/{Id:int}"
+@using BlazorAppReactiveExtensions.Shared
+@inject HttpClient Http
+@using System.Reactive
+@using System.Reactive.Subjects;
+@using System.Reactive.Linq
+
+<PageTitle>Weather forecast</PageTitle>
+
+<h1>Weather forecast</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+@if (forecasts == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Date</th>
+                <th>Temp. (C)</th>
+                <th>Temp. (F)</th>
+                <th>Summary</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var forecast in forecasts)
+            {
+                <tr>
+                    <td>@forecast.Id</td>
+                    <td>@forecast.Date.ToShortDateString()</td>
+                    <td>@forecast.TemperatureC</td>
+                    <td>@forecast.TemperatureF</td>
+                    <td>@forecast.Summary</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <h1>Bind Example</h1>
+
+    <p>
+        <label>
+            Id Value: <input @bind="forecast.Id" />
+        </label>
+    </p>
+
+    <p>
+        <label>
+            Date Value: <input @bind="forecast.Date" />
+        </label>
+    </p>
+}
