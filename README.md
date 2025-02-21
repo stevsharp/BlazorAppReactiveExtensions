@@ -30,6 +30,10 @@ Copy code
 dotnet run
 Open your web browser and navigate to https://localhost:5001 to view the application.
 
+## Connect with Me
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-blue)](https://www.linkedin.com/in/spyros-ponaris-913a6937/)
+
 Usage
 BlazorAppReactiveExtensions provides a foundation for integrating Reactive Extensions into your Blazor projects. Explore the codebase, experiment with reactive programming patterns, and adapt the techniques to suit your specific use cases.
 
